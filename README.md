@@ -1,4 +1,4 @@
-﻿# crud_node_typescript_next
+﻿# Sistema de Controle de produtos 
  ![image](https://github.com/user-attachments/assets/7686d14b-2b9a-4e41-8ec1-58a3fb8b194a)
 
 
