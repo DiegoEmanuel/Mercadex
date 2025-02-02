@@ -3,4 +3,6 @@ export interface Product {
   name: string;
   price: string;
   description: string;
+  createdAt: string;
+  updatedAt: string;
 } 

@@ -1,6 +1,6 @@
 import { Product } from '../types/product';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 export class ProductService {
   //todo melhoria criar uma classe pra tratar erros
@@ -28,9 +28,16 @@ export class ProductService {
     try {
       const response = await fetch(`${API_URL}/products/${id}`, {
         method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
 
-      return response.ok;
+      if (!response.ok) {
+        throw new Error('Falha ao deletar produto');
+      }
+
+      return true;
     } catch (error) {
       console.error('Erro ao deletar produto:', error);
       throw error;
@@ -84,16 +91,15 @@ export class ProductService {
   static async getProductById(id: number): Promise<Product> {
     try {
       const response = await fetch(`${API_URL}/products/${id}`);
-
+      
       if (!response.ok) {
-        throw new Error('Falha ao buscar produto por ID');
+        throw new Error('Produto não encontrado');
       }
 
       return response.json();
+    } catch (error) {
+      console.error('Erro ao buscar produto:', error);
+      throw error;
     }
-      catch (error) {
-        console.error('Erro ao buscar produto por ID:', error);
-        throw error;
-      }
   }
 } 

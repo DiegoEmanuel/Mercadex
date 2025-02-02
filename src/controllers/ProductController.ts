@@ -136,7 +136,12 @@ export class ProductController {
             }
 
             await AppDataSource.manager.remove(product);
-            return res.json({ 
+            
+            // Adicione um log para debug
+            console.log(`Produto ${id} deletado com sucesso`);
+            
+            return res.status(200).json({ 
+                success: true,
                 message: "Produto removido com sucesso" 
             });
         } catch (error) {

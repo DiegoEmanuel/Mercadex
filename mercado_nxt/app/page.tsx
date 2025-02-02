@@ -25,7 +25,7 @@ export default async function Home() {
             <p className="text-gray-500 text-lg">
               Nenhum produto encontrado.
             </p>
-          </div>
+          </div>  
         )}
       </main>
     </div>
