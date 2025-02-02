@@ -81,12 +81,22 @@ export function ProductDetails({ product: initialProduct }: ProductDetailsProps)
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
         <div className="mb-6 flex justify-between items-center">
+          {/* O link é um componente do nextjs que é usado para navegar entre as páginas */}
+          {/* O href é a propriedade que define o caminho da página */}
+          {/* O className é a propriedade que define o estilo da página */}
+          {/* O svg é um componente do nextjs que é usado para exibir um ícone */}
+          {/* O path é a propriedade que define o caminho do ícone */}
+          {/* O viewBox é a propriedade que define o espaço do ícone */}
+          {/* O fill é a propriedade que define o preenchimento do ícone */}
+          {/* O stroke é a propriedade que define a cor do ícone */}
+          {/* O strokeWidth é a propriedade que define a largura do ícone */}
+          
           <Link href="/" className="text-blue-500 hover:text-blue-600 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
             Voltar para lista
-          </Link>
+          </Link> 
           <button
             onClick={() => setIsEditing(!isEditing)}
             className="text-blue-500 hover:text-blue-600"
