@@ -1,9 +1,18 @@
 import "reflect-metadata";
 import express from "express";
+import cors from "cors";
 import { AppDataSource } from "./data-source";
 import productRoutes from "./routes/product.routes";
 
 const app = express();
+
+// Configuração do CORS
+app.use(cors({
+    origin: "http://localhost:3001", // URL do seu frontend
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 
 // Inicializar conexão com o banco
