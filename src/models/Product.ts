@@ -1,16 +1,16 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
-@Entity()
+@Entity('products')
 export class Product {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column()
+    @Column({ type: 'varchar', length: 100 })
     name!: string;
 
-    @Column()
+    @Column({ type: 'decimal', precision: 10, scale: 2 })
     price!: number;
 
-    @Column()
+    @Column({ type: 'text' })
     description!: string;
 } 
