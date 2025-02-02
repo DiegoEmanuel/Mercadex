@@ -52,14 +52,15 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         <div className="mb-6">
           <Link href="/" className="text-blue-500 hover:text-blue-600 flex items-center gap-2">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
+              xmlns="http://www.w3.org/2000/svg" // para o svg funcionar
+              width="20" //largura de 20
+              height="20" //altura de 20
+              viewBox="0 0 24 24" // para o svg funcionar
+              fill="none" // para o svg funcionar
+              stroke="currentColor" // para o svg funcionar
+              strokeWidth="2" // para o svg funcionar
+              strokeLinecap="round" // para o svg funcionar
+
               strokeLinejoin="round"
             >
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -104,11 +105,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-gray-600">Criado em</p>
-                <p className="font-medium">{formatDate(product.createdAt)}</p>
+                <p className="font-medium text-gray-800">{formatDate(product.createdAt)}</p>
               </div>
               <div>
-                <p className="text-gray-600">Última atualização</p>
-                <p className="font-medium">{formatDate(product.updatedAt)}</p>
+                <p className="text-gray-600">Última atualização</p> 
+
+                <p className="font-medium text-gray-800">{formatDate(product.updatedAt)}</p>
               </div>
             </div>
           </div>
