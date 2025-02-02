@@ -81,3 +81,10 @@ npm start      # Inicia o servidor em produção
     "description": "Descrição do produto"
 }
 ```
+
+melhorias 
+
+[ ] controle de clientes
+[ ] modulo de vendas
+[ ] controle de estoque
+[ ] gestão financeira 
