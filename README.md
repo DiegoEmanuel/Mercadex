@@ -85,7 +85,13 @@ npm start      # Inicia o servidor em produção
 
 melhorias 
 
-[ ] controle de clientes
-[ ] modulo de vendas
-[ ] controle de estoque
-[ ] gestão financeira 
+
+## Melhorias futuras
+- [ ] Autenticação (JWT)
+- [ ] modulo de vendas
+- [ ] controle de estoque
+- [ ] gestão financeira 
+
+
+
+
