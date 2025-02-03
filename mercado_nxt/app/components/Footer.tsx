@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 export function FooterSimples() {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
-//essa é uma função que atualiza o horário a cada segundo
-//Sem o useEffect, o horário ficaria parado, porque o React não saberia que precisa atualizar o componente.
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date().toLocaleTimeString());
@@ -13,14 +12,13 @@ export function FooterSimples() {
 
     return () => clearInterval(interval);
   }, []);
-  
-
+  // #2e8b57 //cor da identidade 
   return (
-    <footer className="text-white py-4">
+    <footer className="bg-green-900 py-4 w-full fixed bottom-0 left-0">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Mercadex. Todos os direitos reservados. Feito por Diego Emanuel :)
+            © {new Date().getFullYear()} Mercadex. Todos os direitos reservados. :)
           </p>
           <p className="text-gray-400 text-sm mt-1">
             Horário atual: {currentTime}
@@ -29,4 +27,4 @@ export function FooterSimples() {
       </div>
     </footer>
   );
-} 
+}
