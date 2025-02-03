@@ -2,10 +2,9 @@
 ![Modern Gaming Cover YouTube Banner](https://github.com/user-attachments/assets/f54e3b3f-86fa-4042-8ed7-47fbd46b2a7b)
 
 Esse é o Mercadex, um sistema de controle de produtos e vendas.
-
+```
 Mercadex/
 ├── backend/
-│   ├── Dockerfile
 │   ├── src/
 │   │   ├── controllers/
 │   │   ├── models/
@@ -26,6 +25,7 @@ Mercadex/
 │   └── tsconfig.json
 ├── docker-compose.yml
 └── README.md
+```
 
 ## Arquitetura da Aplicação
 
@@ -44,7 +44,8 @@ A aplicação é dividida em duas partes principais: o frontend e o backend.
 - [Tailwind CSS](https://tailwindcss.com/) para o estilo
 - [Prisma](https://www.prisma.io/) para o banco de dados
 
-Para todos os efeitos: 🎺 npm install; 🎺 npm run dev
+para todos os efeitos: 🎺 npm install; 🎺 npm run dev
 
-Back 🚬 [Backend](https://github.com/DiegoEmanuel/Mercadex-API-e-Client/tree/main/backend)  
+
+Back 🚬 [Backend](https://github.com/DiegoEmanuel/Mercadex-API-e-Client/tree/main/backend)
 Front 💻 [Frontend](https://github.com/DiegoEmanuel/Mercadex-API-e-Client/tree/main/frontend)
