@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
@@ -6,5 +7,14 @@
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-  "root": true
+  "overrides": [
+    {
+      "files": ["frontend/**/*.ts", "frontend/**/*.tsx"],
+      "extends": ["next/core-web-vitals"]
+    },
+    {
+      "files": ["backend/**/*.ts"],
+      "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"]
+    }
+  ]
 } 

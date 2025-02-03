@@ -1,11 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Executa lint-staged em ambos os projetos
-echo "🔍 Verificando frontend..."
-cd frontend && npx lint-staged
-echo "✅ Frontend verificado"
-
-echo "🔍 Verificando backend..."
-cd ../backend && npx lint-staged
-echo "✅ Backend verificado"
+# Executa lint-staged na raiz do projeto
+echo "🔍 Verificando alterações..."
+npx lint-staged
+echo "✅ Verificação concluída"
