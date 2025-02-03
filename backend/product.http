@@ -29,14 +29,15 @@ Content-Type: application/json
 ##
 ##
 ###PUT
-PUT http://localhost:3000/products/1
+PUT http://localhost:3000/products/25
 Content-Type: application/json
 
 {
-    "name": "Product 1",
-    "price": 233,
-    "description": "This is a test product"
+    "name": "Macbook Pro",
+    "price": 10000,
+    "description": "Ultra-portátil com processador M3, 16GB de RAM e 1TB de SSD"
 }
+
 
 ##
 ##
@@ -46,7 +47,7 @@ Content-Type: application/json
 ##
 ##
 ###GET BY ID
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/25
 
 
 ##
@@ -57,7 +58,7 @@ GET http://localhost:3000/products/1
 ##
 ##
 ###DELETE
-DELETE http://localhost:3000/products/2
+DELETE http://localhost:3000/products/26
 
 
     
