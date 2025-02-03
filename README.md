@@ -13,5 +13,7 @@ Esse é o mercadex, um sistema de controle de produtos e vendas.
 - [Prisma](https://www.prisma.io/) para o banco de dados
 
 para todos os efeitos: 🎺 npm install; 🎺 npm run dev
+
+
 Back 🚬 [Backend](https://github.com/DiegoEmanuel/Mercadex-API-e-Client/tree/main/backend)
 Front 💻 [Frontend](https://github.com/DiegoEmanuel/Mercadex-API-e-Client/tree/main/frontend)
