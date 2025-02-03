@@ -9,5 +9,9 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^15.4.3"
   }
-} 
+}
