@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../data-source";
-import { Product } from "../models/Product";
+import { ProductModel } from "../models/Product";
 
 export class ProductController {
     static async create(req: Request, res: Response) {
@@ -20,7 +20,7 @@ export class ProductController {
                 });
             }
 
-            const product = AppDataSource.manager.create(Product, {
+            const product = AppDataSource.manager.create(ProductModel, {
                 name,
                 price,
                 description
@@ -38,7 +38,7 @@ export class ProductController {
 
     static async findAll(req: Request, res: Response) {
         try {
-            const products = await AppDataSource.manager.find(Product);
+            const products = await AppDataSource.manager.find(ProductModel);
             return res.json(products);
         } catch (error) {
             console.error("Erro ao listar produtos:", error);
@@ -58,7 +58,7 @@ export class ProductController {
                 });
             }
 
-            const product = await AppDataSource.manager.findOne(Product, {
+            const product = await AppDataSource.manager.findOne(ProductModel, {
                 where: { id }
             });
 
@@ -94,7 +94,7 @@ export class ProductController {
                 });
             }
 
-            const product = await AppDataSource.manager.findOne(Product, {
+            const product = await AppDataSource.manager.findOne(ProductModel, {
                 where: { id }
             });
 
@@ -104,7 +104,7 @@ export class ProductController {
                 });
             }
 
-            AppDataSource.manager.merge(Product, product, req.body);
+            AppDataSource.manager.merge(ProductModel, product, req.body);
             const results = await AppDataSource.manager.save(product);
             return res.json(results);
         } catch (error) {
@@ -125,7 +125,7 @@ export class ProductController {
                 });
             }
 
-            const product = await AppDataSource.manager.findOne(Product, {
+            const product = await AppDataSource.manager.findOne(ProductModel, {
                 where: { id }
             });
 
