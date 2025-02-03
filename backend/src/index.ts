@@ -28,6 +28,11 @@ AppDataSource.initialize()
 
 // Rotas
 app.use(productRoutes);
+//rota / aparecerá bem vindo
+app.get('/', (req, res) => {
+    res.send('Bem vindo a API do mercadex');
+});
+
 
 // Tratamento de erro para rotas não encontradas
 app.use((req, res) => {
