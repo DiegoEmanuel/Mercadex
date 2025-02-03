@@ -1,3 +1,9 @@
+/**
+ * Este arquivo é responsável por renderizar uma página de erro
+ * que é exibida quando não é possível carregar os detalhes de um produto.
+ * A página apresenta uma mensagem de erro e um link para retornar à lista de produtos.
+ */
+
 'use client';
 
 import Link from 'next/link';

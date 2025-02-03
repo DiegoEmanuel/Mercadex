@@ -1,3 +1,19 @@
+/**
+ * Este arquivo é responsável por renderizar a página inicial do Mercadex,
+ * exibindo um catálogo de produtos. Ele utiliza o ProductService para
+ * buscar os produtos disponíveis e os exibe em um layout de grade.
+ * 
+ * Componentes Utilizados:
+ * - ProductCard: Componente para exibir informações de cada produto.
+ * - FooterSimples: Componente de rodapé simples.
+ * 
+ * Estrutura:
+ * - Header: Exibe o título do catálogo e a quantidade de produtos disponíveis.
+ * - Section: Renderiza os produtos em um layout de grade responsivo.
+ * - Mensagem: Exibe uma mensagem quando nenhum produto é encontrado.
+ * - FooterSimples: Componente de rodapé simples.
+ */
+
 import { ProductCard } from './components/ProductCard';
 import { ProductService } from './services/productService';
 import { FooterSimples } from './components/Footer';
@@ -34,4 +50,3 @@ export default async function Home() {
 
   );
 }
-
