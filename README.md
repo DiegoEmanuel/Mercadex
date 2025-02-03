@@ -1,7 +1,6 @@
 ﻿# Sistema de Controle de produtos 
 ![Modern Gaming Cover YouTube Banner](https://github.com/user-attachments/assets/f54e3b3f-86fa-4042-8ed7-47fbd46b2a7b)
 
- ![image](https://github.com/user-attachments/assets/7686d14b-2b9a-4e41-8ec1-58a3fb8b194a)
 
 
 ## Pacotes Necessários
