@@ -4,7 +4,7 @@ import cors from "cors";
 import { AppDataSource } from "./data-source";
 import productRoutes from "./routes/product.routes";
 
-export const app = express();
+const app = express();
 
 // Configuração do CORS
 app.use(cors({
@@ -15,25 +15,25 @@ app.use(cors({
 
 app.use(express.json());
 
-// Rotas com prefixo /products
-app.use("/products", productRoutes);
+// Inicializar conexão com o banco
+AppDataSource.initialize()
+    .then(() => {
+        console.log("Conexão com banco estabelecida");
+    })
+    .catch((error) => {
+        console.error("Erro ao conectar ao banco:", error);
+        process.exit(1);
+    });
 
-if (process.env.NODE_ENV !== 'test') {
-    AppDataSource.initialize()
-        .then(() => {
-            console.log("Conexão com banco estabelecida");
-            const PORT = process.env.PORT || 3000;
-            app.listen(PORT, () => {
-                console.log(`Servidor rodando na porta ${PORT}`);
-            });
-        })
-        .catch((error) => {
-            console.error("Erro ao conectar ao banco:", error);
-            process.exit(1);
-        });
-}
+// Rotas
+app.use(productRoutes);
 
 // Tratamento de erro para rotas não encontradas
 app.use((req, res) => {
     res.status(404).json({ error: "Rota não encontrada" });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 }); 
