@@ -1,25 +1,31 @@
 import { Product } from '../types/product';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export class ProductService {
   //todo melhoria criar uma classe pra tratar erros
   //todo melhoria criar classe pra montar as requisições
   //get
   static async getProducts(): Promise<Product[]> {
-
     try {
+      console.log('Fazendo requisição para:', `${API_URL}/products`);
       const response = await fetch(`${API_URL}/products`, {
-        next: { revalidate: 0 }
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
       });
-
+      
       if (!response.ok) {
+        console.error('Resposta não ok:', response.status, response.statusText);
         throw new Error('Falha ao buscar produtos');
       }
-
-      return response.json();
+      
+      const data = await response.json();
+      console.log('Dados recebidos:', data);
+      return data;
     } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
+      console.error('Erro detalhado ao buscar produtos:', error);
       throw error;
     }
   }

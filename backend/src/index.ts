@@ -8,8 +8,9 @@ const app = express();
 
 // Configuração do CORS
 app.use(cors({
-    origin: [process.env.LOCALHOST || "http://localhost:3001"],     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    origin: ['http://localhost:3001'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }));
 
 
