@@ -1,38 +1,17 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../data-source";
 import { ProductModel } from "../models/Product";
+import { CreateProductDTO, UpdateProductDTO } from "../dtos/ProductDTO";
 
 export class ProductController {
     static async create(req: Request, res: Response) {
         try {
-            const { name, price, description } = req.body;
-
-            // Validações básicas
-            if (!name || !price || !description) {
-                return res.status(400).json({ 
-                    error: "Todos os campos são obrigatórios" 
-                });
-            }
-
-            if (price < 0) {
-                return res.status(400).json({ 
-                    error: "Preço não pode ser negativo" 
-                });
-            }
-
-            const product = AppDataSource.manager.create(ProductModel, {
-                name,
-                price,
-                description
-            });
-
+            const productData = CreateProductDTO.validate(req.body);
+            const product = AppDataSource.manager.create(ProductModel, productData);
             const results = await AppDataSource.manager.save(product);
             return res.status(201).json(results);
         } catch (error) {
-            console.error("Erro ao criar produto:", error);
-            return res.status(500).json({ 
-                error: "Erro interno ao criar produto" 
-            });
+            return res.status(400).json({ error: (error as Error).message });
         }
     }
 
@@ -80,38 +59,21 @@ export class ProductController {
     static async update(req: Request, res: Response) {
         try {
             const id = parseInt(req.params.id);
-            const { name, price, description } = req.body;
-
-            if (isNaN(id)) {
-                return res.status(400).json({ 
-                    error: "ID inválido" 
-                });
-            }
-
-            if (price && price < 0) {
-                return res.status(400).json({ 
-                    error: "Preço não pode ser negativo" 
-                });
-            }
-
+            const productData = UpdateProductDTO.validate(req.body);
+            
             const product = await AppDataSource.manager.findOne(ProductModel, {
                 where: { id }
             });
 
             if (!product) {
-                return res.status(404).json({ 
-                    error: "Produto não encontrado" 
-                });
+                return res.status(404).json({ error: "Produto não encontrado" });
             }
 
-            AppDataSource.manager.merge(ProductModel, product, req.body);
+            AppDataSource.manager.merge(ProductModel, product, productData);
             const results = await AppDataSource.manager.save(product);
             return res.json(results);
         } catch (error) {
-            console.error("Erro ao atualizar produto:", error);
-            return res.status(500).json({ 
-                error: "Erro interno ao atualizar produto" 
-            });
+            return res.status(400).json({ error: (error as Error).message });
         }
     }
 
