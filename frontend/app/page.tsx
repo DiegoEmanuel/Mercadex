@@ -19,7 +19,19 @@ import { ProductService } from './services/productService';
 import { FooterSimples } from './components/Footer';
 
 export default async function Home() {
-  const products = await ProductService.getProducts();
+  let products = [];
+  try {
+    products = await ProductService.getProducts();
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error);
+    return (
+      <div className="min-h-screen p-8 bg-gray-100 flex items-center justify-center">
+        <p className="text-center text-red-500 text-lg">
+          Verifique sua conexão com a API.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen p-8 bg-gray-100">
