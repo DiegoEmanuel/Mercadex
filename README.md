@@ -3,25 +3,51 @@
 Esse é o Mercadex, um sistema de controle de produtos e vendas.
 ```
 Mercadex/
+Mercadex/
 ├── backend/
 │   ├── src/
 │   │   ├── controllers/
+│   │   ├── docs/
+│   │   ├── entity/
 │   │   ├── models/
 │   │   ├── routes/
+│   │   │   └── data-source.ts
 │   │   ├── services/
-│   │   └── index.ts
-│   ├── package.json
-│   └── tsconfig.json
-├── frontend/
+│   │   └── types/
+│   │       ├── global.d.ts
+│   │       └── types.ts
+│   ├── .env
+│   ├── .env.example
+│   ├── .eslintrc.js
+│   ├── .gitignore
 │   ├── Dockerfile
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   └── index.tsx
+│   ├── jest.setup.ts
+│   ├── package-lock.json
 │   ├── package.json
-│   └── tsconfig.json
+│   ├── tsconfig.json
+│   └── README.md
+├── frontend/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── CreateProduct.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── ProductCard.tsx
+│   │   │   └── ProductDetails.tsx
+│   │   ├── services/
+│   │   └── types/
+│   ├── public/
+│   ├── .env
+│   ├── .env.docker
+│   ├── .eslintrc.json
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── next.config.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.ts
+│   ├── tsconfig.json
+│   └── README.md
 ├── docker-compose.yml
 └── README.md
 ```

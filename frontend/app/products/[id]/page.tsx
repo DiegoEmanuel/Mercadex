@@ -1,28 +1,22 @@
-/**
- * Este arquivo é responsável por renderizar a página de detalhes de um produto específico.
- * Utiliza o serviço ProductService para buscar os dados do produto pelo ID fornecido na URL.
- * O componente ProductDetails é usado para exibir as informações do produto.
- * A função generateMetadata é utilizada para definir os metadados da página, como o título.
- */
-
 import { ProductService } from '@/app/services/productService';
-import { ProductDetails } from '@/app/components/ProductDetails';
 
 interface ProductPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await ProductService.getProductById(Number(params.id));
-  return <ProductDetails product={product} />;
-}
+  const resolvedParams = await params;
+  const product = await ProductService.getProductById(Number(resolvedParams.id));
 
-interface MetadataProps {
-  params: { id: string };
-}
+  if (!product) {
+    return <div>Produto não encontrado</div>;
+  }
 
-export function generateMetadata({ params }: MetadataProps) {
-  return {
-    title: `Produto ${params.id} - Detalhes`,
-  };
-} 
+  return (
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold">{product.name}</h1>
+      <p className="text-gray-600">{product.description}</p>
+      <p className="text-lg font-bold">R$ {product.price}</p>
+    </div>
+  );
+}
