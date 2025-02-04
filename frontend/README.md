@@ -1,3 +1,6 @@
+![Modern Gaming Cover YouTube Banner](https://github.com/user-attachments/assets/f54e3b3f-86fa-4042-8ed7-47fbd46b2a7b)
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
