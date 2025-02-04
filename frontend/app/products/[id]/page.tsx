@@ -8,16 +8,20 @@
 import { ProductService } from '@/app/services/productService';
 import { ProductDetails } from '@/app/components/ProductDetails';
 
-export default async function ProductPage({
-  params,
-}: {
+interface ProductPageProps {
   params: { id: string };
-}) {
+}
+
+export default async function ProductPage({ params }: ProductPageProps) {
   const product = await ProductService.getProductById(Number(params.id));
   return <ProductDetails product={product} />;
 }
 
-export function generateMetadata({ params }: { params: { id: string } }) {
+interface MetadataProps {
+  params: { id: string };
+}
+
+export function generateMetadata({ params }: MetadataProps) {
   return {
     title: `Produto ${params.id} - Detalhes`,
   };
