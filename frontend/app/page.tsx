@@ -16,7 +16,7 @@
 
 import { ProductCard } from './components/ProductCard';
 import { ProductService } from './services/productService';
-import { FooterSimples } from './components/Footer';
+import { Footer } from './components/Footer';
 
 export default async function Home() {
   let products = [];
@@ -57,7 +57,7 @@ export default async function Home() {
           </div>  
         )}
          </main>
-         <FooterSimples />
+         <Footer />
     </div>
 
   );

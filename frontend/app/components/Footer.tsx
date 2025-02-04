@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-export function FooterSimples() {
+export function Footer() {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
