@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone', // Garante que o Next gere arquivos necessários para produção
+  experimental: {
+    appDir: true,        // Ativa o suporte ao diretório /app (se estiver usando)
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
