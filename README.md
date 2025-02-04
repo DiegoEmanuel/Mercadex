@@ -1,5 +1,4 @@
 # Sistema de Controle de Produtos 
-![Modern Gaming Cover YouTube Banner](https://github.com/user-attachments/assets/f54e3b3f-86fa-4042-8ed7-47fbd46b2a7b)
 
 Esse é o Mercadex, um sistema de controle de produtos e vendas.
 ```
