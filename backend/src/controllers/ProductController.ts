@@ -4,7 +4,7 @@ import { ProductModel } from "../models/Product";
 import { CreateProductDTO, UpdateProductDTO } from "../dtos/ProductDTO";
 
 export class ProductController {
-    static async create(req: Request, res: Response) {
+    static  async create(req: Request, res: Response) {
         try {
             const productData = CreateProductDTO.validate(req.body);
             const product = AppDataSource.manager.create(ProductModel, productData);

@@ -46,7 +46,6 @@ export default function CreateProduct() {
                 throw new Error('Erro ao criar produto');
             }
 
-            const data = await response.json();
             router.push('/');
             router.refresh();
         } catch (err) {

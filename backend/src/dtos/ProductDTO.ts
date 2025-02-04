@@ -1,3 +1,5 @@
+//data transfer object
+
 export class CreateProductDTO {
   name: string;
   price: number;
