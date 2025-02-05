@@ -3,7 +3,6 @@
 Esse é o Mercadex, um sistema de controle de produtos e vendas.
 ```
 Mercadex/
-Mercadex/
 ├── backend/
 │   ├── src/
 │   │   ├── controllers/
